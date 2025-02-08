@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f1f1;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #ff69b4;
+    }
+
+    .question {
+      font-size: 24px;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .input-section {
+      margin-top: 20px;
+    }
+
+    .button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .button:hover {
+      background-color: #ff1493;
+    }
+
+    .link {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #ff6347;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    .input-field {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .sad-message {
+      font-size: 24px;
+      color: #ff6347;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Will You Be My Valentine?</h1>
+
+  <div id="nameSection">
+    <div class="question">
+      <p>What's your name?</p>
+    </div>
+    <div class="input-section">
+      <input type="text" id="nameInput" class="input-field" placeholder="Your Name" />
+      <button class="button" onclick="askValentineQuestion()">Submit</button>
+    </div>
+  </div>
+
+  <div id="valentineQuestion" style="display: none;">
+    <div class="question">
+      <p id="greetingMessage"></p>
+      <p>Will you be my Valentine?</p>
+    </div>
+    <div class="choices">
+      <button class="button" onclick="saveResponse('yes')">Yes ❤️</button>
+      <button class="button" onclick="saveResponse('no')">No ❌</button>
+    </div>
+  </div>
+
+  <p id="message" style="display: none; font-size: 24px; color: #ff6347;">💖 Happy Valentine's Day! 💖</p>
+  
+  <!-- Clickable Link, initially hidden -->
+  <a id="link" href="https://www.facebook.com/lenarca.aldana" class="link" style="display: none;" target="_blank">The Creator jk ChatGpt code yan hehe</a>
+
+  <!-- Sad Message for 'No' response -->
+  <p id="sadMessage" class="sad-message" style="display: none;">Ok, maybe next time 😢</p>
+
+  <script>
+    // Function to ask for the user's name and display the Valentine's question
+    function askValentineQuestion() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (name) {
+        document.getElementById('nameSection').style.display = 'none';
+        document.getElementById('valentineQuestion').style.display = 'block';
+
+        // Show a personalized greeting
+        document.getElementById('greetingMessage').innerText = `Hello, ${name}!`;
+      } else {
+        alert("Please enter your name.");
+      }
+    }
+
+    // Save the user's response (Yes or No) and show the result
+    function saveResponse(response) {
+      if (response === 'yes') {
+        // Show the message and the clickable link when they say Yes
+        document.getElementById('message').style.display = 'block';
+        document.getElementById('link').style.display = 'inline'; // Makes the link visible
+        document.getElementById('sadMessage').style.display = 'none'; // Hide the sad message if they say yes
+      } else if (response === 'no') {
+        // Show the sad message when they say No
+        document.getElementById('sadMessage').style.display = 'block';
+        document.getElementById('link').style.display = 'none'; // Hide the link
+        document.getElementById('message').style.display = 'none'; // Hide the happy message
+      }
+    }
+  </script>
+
+</body>
+</html>
