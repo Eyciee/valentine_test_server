@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Will You Be My Valentine?</h1>
+
+    <form id="valentineForm">
+        <div>
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" name="username" placeholder="Your Name" required>
+        </div>
+
+        <div>
+            <label>Do you want to be my Valentine?</label>
+            <div>
+                <input type="radio" id="yes" name="valentine" value="yes" required>
+                <label for="yes">Yes</label>
+            </div>
+            <div>
+                <input type="radio" id="no" name="valentine" value="no">
+                <label for="no">No</label>
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="message" class="hidden">
+        <p id="responseMessage"></p>
+        <p>Thanks for being mine in the future!</p>
+    </div>
+
+    <p>the creator-> <a href="https://www.facebook.com/lenarca.aldana" target="_blank">Click here</a>!</p> <!-- This is the clickable link -->
+    <p>jk ChatGPT ang code na yan HAHAHHAHAHAHA</p>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
